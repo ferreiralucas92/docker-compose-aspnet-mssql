@@ -2,13 +2,9 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
-
-steps:
-
 - task: Docker@2
   inputs:
-    containerRegistry: 'dockeracrpf1966'
+    containerRegistry: 'dotnetmssqlpf1966'
     repository: 'dotnetsql'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
@@ -16,9 +12,5 @@ steps:
       $(Build.BuildId)
       latest
 
-- task: Docker@2
-  inputs:
-    containerRegistry: 'dockeracrpf1966'
-    repository: 'dotnetsql'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+
+
